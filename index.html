@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Gabarito:wght@600&family=Inter:wght@600&family=Noto+Sans+JP&family=Nova+Square&family=Poppins:wght@100&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>To-Do-List</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="todo-app">
+            <h2>To-Do List <img src="images/to-do-img.png" alt=""></h2>
+            <div class="input-div">
+                <input type="text" id="addtext" placeholder="Add your text">
+                <button onclick="addFunction()">Add</button>
+            </div>
+            <ul id="ul-id">
+                <!-- <li class="checked">task1</li>
+                <li>task2</li>
+                <li>task3</li>
+                <li>task4</li> -->
+            </ul>
+        </div>
+    </div>
+
+
+    <script>
+        var inputValue = document.getElementById("addtext");
+        var ul = document.getElementById("ul-id");
+
+        function addFunction() {
+            if (inputValue.value === "") {
+                alert("add some text");
+            } else {
+                var li=document.createElement("li");
+                li.innerHTML =inputValue.value;
+                ul.append(li);
+
+                // add delete button 
+                var span = document.createElement("span");
+                span.innerHTML= "&#x2716;"
+                li.appendChild(span);
+
+                // delete  
+                span.addEventListener('click', function () {
+                    li.remove();
+                });
+
+                li.addEventListener('click',function () {
+                   li.classList.toggle("checked");
+                })
+            }
+            inputValue.value= "";
+        }
+        
+
+        
+    </script>
+</body>
+
+</html>

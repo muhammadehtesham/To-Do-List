@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nova Square', sans-serif;
+}
+
+:root {
+    --text-color:  #1f7768;
+    --input-bg: #ebecf0;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgba(12, 166, 148, 1) 35%, rgba(114, 172, 238, 1) 100%);
+    padding: 10px;
+}
+
+.todo-app {
+    width: 100%;
+    max-width: 574px;
+    background-color: white;
+    margin: 100px auto 20px;
+    padding: 23px 17px 48px;
+    border-radius: 20px;
+}
+
+
+.todo-app h2 {
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    margin-top: 3px;
+}
+
+.todo-app h2 img {
+    width: 70px;
+    margin-left: 10px;
+}
+
+
+
+/* add item div  */
+.input-div {
+    font-size: 23px;
+    background-color: var(--input-bg);
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+}
+
+.input-div input {
+    width: 21rem;
+    padding: 13px;
+    margin-left: 8px;
+    border: none;
+    outline: none;
+    background: transparent;
+
+}
+
+.input-div button {
+    border-radius: 20px;
+    width: 110px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    background: linear-gradient(135deg, rgba(12, 166, 148, 1) 35%, rgba(114, 172, 238, 1) 100%);
+}
+
+
+
+/* items list  */
+
+ul{
+    list-style: none;
+    color: #878686;
+    margin-top: 23px;
+}
+
+ul li{
+    position: relative;
+    padding: 14px 0px 14px 42px;
+
+}
+
+ul li::before{
+    content: "";
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    left: 0px;
+    top: 12px;
+    background-image: url(images/unchecked.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+ul li span{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: 0px;
+    top: 11px;
+  
+    text-align: center;
+    padding-top: 1px;
+    border-radius: 50%;
+
+}
+
+ul li span:hover{
+
+    background-color: var(--input-bg);
+}
+
+ul  li.checked{
+    text-decoration: line-through;
+}
+
+ul li.checked::before{
+  background-image: url(images/checked.png);
+}
